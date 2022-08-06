@@ -1,0 +1,19 @@
+<nav class="navbar navbar-expand-lg navbar-dark bg-secondary" >
+  <a class="navbar-brand" [routerLink]="['']"><i class="fa-solid fa-clapperboard"></i> <b style="margin-left: 10px;">MOVIES</b></a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#textoNavbar" aria-controls="textoNavbar" aria-expanded="false" aria-label="Alterna navegação">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="textoNavbar">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item active">
+        <a class="nav-link" [routerLink]="['/dashboard']">Home <span class="sr-only">(Página atual)</span></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" [routerLink]="['/list']">Movie list</a>
+      </li>
+    </ul>
+    <span class="navbar-text">
+      Worst movies second <i>Golden Raspberry Awards</i>.
+    </span>
+  </div>
+</nav>

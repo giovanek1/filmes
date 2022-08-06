@@ -1,0 +1,24 @@
+<div class="row">
+  <div class="col col-12">
+    <app-card [config]="CONFIG_CARD">
+      <form [formGroup]="listFormGroup">
+        <div class="row">
+          <input type="number" formControlName="year" id="year" placeholder="Year" class="form-control form-control-sm"
+            (keyup)="search($event.key === 'Enter', this.paginationConfig.pageNumber + 1)">
+          <select formControlName="winner" class="form-control form-control-sm" id="winner">
+            <option value="">Winner</option>
+            <option [value]="true">Yes</option>
+            <option [value]="false">No</option>
+          </select>
+          <button type="button" class="btn btn-primary btn-sm" id="btn-search"
+            (click)="search(true, this.paginationConfig.pageNumber + 1)">
+            <i class="fa fa-search"></i>
+          </button>
+        </div>
+      </form>
+      <app-table [config]="CONFIG_TABLE"></app-table>
+      <app-pagination *ngIf="paginationConfig" [config]="paginationConfig" (emitPage)="search(true, $event, false)">
+      </app-pagination>
+    </app-card>
+  </div>
+</div>

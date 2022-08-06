@@ -1,0 +1,32 @@
+<nav *ngIf="config.totalPages > 1" aria-label="Navegação de página exemplo">
+  <ul class="pagination justify-content-center">
+    <li class="page-item">
+      <a class="page-link" (click)="nextPage(1)" aria-label="Primeira">
+        <span aria-hidden="true">&laquo;&laquo;</span>
+        <span class="sr-only">Primeira</span>
+      </a>
+    </li>
+    <li class="page-item">
+      <a class="page-link" (click)="nextPage(config.pageNumber)" aria-label="Anterior">
+        <span aria-hidden="true">&laquo;</span>
+        <span class="sr-only">Anterior</span>
+      </a>
+    </li>
+    <li *ngFor="let page of pages" (click)="nextPage(page)"
+      class="page-item {{(page - 1) === this.config.pageNumber ? 'active': ''}}">
+      <a class="page-link">{{page}}</a>
+    </li>
+    <li class="page-item">
+      <a class="page-link" (click)="nextPage(config.pageNumber + 2)" aria-label="Próximo">
+        <span aria-hidden="true">&raquo;</span>
+        <span class="sr-only">Próximo</span>
+      </a>
+    </li>
+    <li class="page-item">
+      <a class="page-link" (click)="nextPage(config.totalPages)" aria-label="Última">
+        <span aria-hidden="true">&raquo;&raquo;</span>
+        <span class="sr-only">Última</span>
+      </a>
+    </li>
+  </ul>
+</nav>

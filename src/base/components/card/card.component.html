@@ -1,0 +1,9 @@
+<div class="card">
+  <div class="card-body" [ngStyle]="(config.style ?? null)">
+    <h6 class="card-title">{{config.title}}</h6>
+    <h6 *ngIf="config.subtitle" class="card-subtitle mb-2 text-muted">
+      {{config.subtitle}}
+    </h6>
+    <ng-content></ng-content>
+  </div>
+</div>

@@ -1,0 +1,19 @@
+<table class="{{config.class ?? 'table table-bordered table-sm table-striped'}}"
+  [ngStyle]="(config.style ?? null)">
+  <thead>
+    <tr>
+      <th *ngFor="let column of config.columns"
+      [ngStyle]="(column.style ?? null)" class="{{column.class ?? ''}}">
+        {{column.name}}
+      </th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let row of config.rows">
+      <th *ngFor="let value of row.values"
+      [ngStyle]="(value.style ?? null)" class="{{value.class ?? ''}}">
+        {{value.value}}
+      </th>
+    </tr>
+  </tbody>
+</table>

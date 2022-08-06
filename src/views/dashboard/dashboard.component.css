@@ -1,0 +1,10 @@
+#search{
+  width: calc(100% - 39px);
+}
+#btn-search{
+  width: 34px;
+  margin-left: 5px;
+}
+.row{
+  margin: 0 0 10px 0;
+}
